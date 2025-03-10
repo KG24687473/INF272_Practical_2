@@ -1,0 +1,41 @@
+﻿@model IEnumerable<u24687473_INF272_Practical_2.Models.Students>
+
+@{
+    ViewBag.Title = "Practical2";
+}
+
+<h2>Group Members</h2>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.StudentID)</th>
+        <th>@Html.DisplayNameFor(model => model.Name)</th>
+        <th>@Html.DisplayNameFor(model => model.Surname)</th>
+        <th>@Html.DisplayNameFor(model => model.StudentEmail)</th>
+        <th>Profile</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.StudentID)</td>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.Surname)</td>
+            <td>@Html.DisplayFor(modelItem => item.StudentEmail)</td>
+            <td>
+                <a href="@Url.Content(item.myLink)" class="btn btn-primary">Link</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<script>
+    function navigateToPage() {
+        var dropdown = document.getElementById("peopleDropdown");
+        var selectedLink = dropdown.value;
+        if (selectedLink) {
+            window.location.href = selectedLink;
+        }
+    }
+</script>
+

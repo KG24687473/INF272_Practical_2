@@ -8,18 +8,26 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+            @Html.ActionLink("Home", "Index", "People", new { area = "" }, new { @class = "navbar-brand" })
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="peopleDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            List of People
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="peopleDropdown">
+                            <li><a class="dropdown-item" href="@Url.Content("~/HTML/Person01.html")">Keshiv Gounden</a></li>
+                            <li><a class="dropdown-item" href="@Url.Content("~/HTML/Person02.html")">Modiri Thobane</a></li>
+                            <li><a class="dropdown-item" href="@Url.Content("~/HTML/Person03.html")">Naqeeb Hussain Dawood</a></li>
+                            <li><a class="dropdown-item" href="@Url.Content("~/HTML/Person04.html")">Dian Erasmus</a></li>
+                            <li><a class="dropdown-item" href="@Url.Content("~/HTML/Person05.html")">Nicola James</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
