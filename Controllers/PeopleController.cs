@@ -9,22 +9,18 @@ namespace u24687473_INF272_Practical_2.Controllers
 {
     public class PeopleController : Controller
     {
-        private static List<Students> GetPeopleList()
-        {
-            return new List<Students>
-            {
-                new Students { StudentID = "u24687233", Name = "Keshiv", Surname = "Gounden", StudentEmail = "u24687233@tuks.co.za", myLink = "~/HTML/Keshiv.html" },
-                new Students { StudentID = "u23738929", Name = "Modiri", Surname = "Thobane", StudentEmail = "u23738929@tuks.co.za", myLink = "~/HTML/Modiri.html" },
-                new Students { StudentID = "u20417200", Name = "Naqeeb", Surname = "Hussain Dawood", StudentEmail = "u20417200@tuks.co.za", myLink = "~/HTML/Naqeeb.html" },
-                new Students { StudentID = "u24647323", Name = "Dian", Surname = "Erasmus", StudentEmail = "u24647323@tuks.co.za", myLink = "~/HTML/Dian.html" },
-                new Students { StudentID = "u22578642", Name = "Nicola", Surname = "James", StudentEmail = "u22578642@tuks.co.za", myLink = "~/HTML/Nicola.html" }
-            };
-        }
-
         public ActionResult Index()
         {
-            var members = GetPeopleList();
-            return View(members);
+            List<Person> people = new List<Person>
+            {
+                new Person { StudentNumber = 24687473, Name = "Keshiv", Surname = "Gounden", Email = "u24687473@tuks.co.za", myLink = Url.Content("~/Content/HTML/Person01.html") },
+                new Person { StudentNumber = 23738929, Name = "Modiri", Surname = "Thobane", Email = "u23738929@tuks.co.za", myLink = Url.Content("~/Content/HTML/Person02.html") },
+                new Person { StudentNumber = 20417200, Name = "Naqeeb", Surname = "Hussain Dawood", Email = "u20417200@tuks.co.za", myLink = Url.Content("~/Content/HTML/Person03.html") },
+                new Person { StudentNumber = 24647323, Name = "Dian", Surname = "Erasmus", Email = "u24647323@tuks.co.za", myLink = Url.Content("~/Content/HTML/Person04.html") },
+                new Person { StudentNumber = 22578642, Name = "Nicola", Surname = "James", Email = "u22578642@tuks.co.za", myLink = Url.Content("~/Content/HTML/Person05.html") }
+            };
+
+            return View(people);
         }
     }
 }

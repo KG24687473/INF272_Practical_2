@@ -125,7 +125,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Students.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +145,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\NewStyle.css" />
+    <Content Include="Content\HTML\Person01.html" />
+    <Content Include="Content\HTML\Person02.html" />
+    <Content Include="Content\HTML\Person03.html" />
+    <Content Include="Content\HTML\Person04.html" />
+    <Content Include="Content\HTML\Person05.html" />
+    <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -180,17 +185,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\HTML\Keshiv.cshtml" />
-    <Content Include="Views\HTML\Modiri.cshtml" />
-    <Content Include="Views\HTML\Naqeeb.cshtml" />
-    <Content Include="Views\HTML\Dian.cshtml" />
-    <Content Include="Views\HTML\Nicola.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
     <Content Include="Views\Shared\_PeopleDropdown.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\HTML\Images\" />
+    <Folder Include="Content\HTML\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

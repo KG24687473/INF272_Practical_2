@@ -7,11 +7,11 @@ using System.Web;
 
 namespace u24687473_INF272_Practical_2.Models
 {
-    public class Students
+    public class Person
     {
         [Key]
         [Display(Name = "Student Number")]
-        public string StudentID { get; set; }
+        public int StudentNumber { get; set; }
 
         [Required]
         [Display(Name = "Name")]
@@ -21,10 +21,9 @@ namespace u24687473_INF272_Practical_2.Models
         [Display(Name = "Surname")]
         public string Surname { get; set; }
 
-        [Required]
-        [EmailAddress]
+        [Required, EmailAddress]
         [Display(Name = "Email")]
-        public string StudentEmail { get; set; }
+        public string Email { get; set; }
 
         [Required]
         [Display(Name = "Profile Link")]
