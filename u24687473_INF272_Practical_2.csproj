@@ -180,12 +180,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\HTML\Person01.cshtml" />
-    <Content Include="Views\HTML\Person02.cshtml" />
-    <Content Include="Views\HTML\Person03.cshtml" />
-    <Content Include="Views\HTML\Person04.cshtml" />
-    <Content Include="Views\HTML\Person05.cshtml" />
+    <Content Include="Views\HTML\Keshiv.cshtml" />
+    <Content Include="Views\HTML\Modiri.cshtml" />
+    <Content Include="Views\HTML\Naqeeb.cshtml" />
+    <Content Include="Views\HTML\Dian.cshtml" />
+    <Content Include="Views\HTML\Nicola.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
+    <Content Include="Views\Shared\_PeopleDropdown.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

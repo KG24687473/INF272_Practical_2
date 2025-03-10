@@ -1,0 +1,10 @@
+﻿@{
+    var peopleList = u24687473_INF272_Practical_2.Controllers.PeopleController.GetPeopleList();
+}
+
+<ul class="dropdown-menu" aria-labelledby="peopleDropdown">
+    @foreach (var person in peopleList)
+    {
+        <li><a class="dropdown-item" href="@Url.Content(person.myLink)">@person.Name @person.Surname</a></li>
+    }
+</ul>

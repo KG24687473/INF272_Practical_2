@@ -1,18 +1,205 @@
-﻿.table {
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Navigation menu styling */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    background-color: #f0f0f0;
+}
+
+    nav a {
+        padding: 10px 15px;
+        text-decoration: none;
+        color: white;
+        background-color: black;
+    }
+
+        nav a:not(:last-child) {
+            border-right: 1px solid #ccc;
+        }
+
+        /* Active menu item */
+        nav a.active {
+            background-color: #4CAF50;
+        }
+
+        /* Hover effect for non-active menu items */
+        nav a:not(.active):hover {
+            background-color: grey;
+        }
+
+/* Section styling */
+section {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    overflow: hidden; /* Clearfix for floated elements */
+}
+
+/* Image styling */
+.flip-img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+    /* Flipping effect on hover */
+    .flip-img:hover {
+        transform: scaleX(-1);
+    }
+
+/* Background section image positioning */
+section:nth-of-type(1) img {
+    float: left;
+    margin-right: 15px;
+}
+
+/* Hobbies section image positioning */
+section:nth-of-type(2) img {
+    float: right;
+    margin-left: 15px;
+}
+
+/* Table styling */
+table {
     width: 100%;
     border-collapse: collapse;
 }
 
-    .table th, .table td {
-        border: 1px solid black;
+    table th, table td {
+        border: 1px solid #ddd;
         padding: 8px;
+        text-align: left;
     }
 
-.form-select {
-    width: 250px;
-    margin-left: 10px;
+    table th {
+        background-color: #f2f2f2;
+    }
+
+h1 {
+    color: #333;
+    text-align: center;
 }
 
-.flip-img:hover {
-    transform: scaleX(-1);
+/* Menu styling */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #333;
+    margin-bottom: 20px;
 }
+
+    .menu a {
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        border-right: 1px solid #555;
+    }
+
+        .menu a:last-child {
+            border-right: none;
+        }
+
+        .menu a.active {
+            background-color: #4CAF50;
+        }
+
+        .menu a:hover:not(.active) {
+            background-color: #555;
+        }
+
+/* Section styling */
+section {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Bio section */
+.bio-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+    transition: transform 0.5s;
+}
+
+    .profile-image:hover {
+        transform: scaleX(-1);
+    }
+
+.bio-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Hobbies section */
+.hobbies-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+.hobby-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-left: 20px;
+    transition: transform 0.5s;
+}
+
+    .hobby-image:hover {
+        transform: scaleX(-1);
+    }
+
+.hobbies-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Modules table */
+.modules-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .modules-table th, .modules-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .modules-table th {
+        background-color: #f2f2f2;
+    }
+
+    .modules-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }

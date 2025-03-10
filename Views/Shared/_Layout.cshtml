@@ -21,11 +21,17 @@
                             List of People
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="peopleDropdown">
-                            <li><a class="dropdown-item" href="@Url.Content("~/HTML/Person01.html")">Keshiv Gounden</a></li>
-                            <li><a class="dropdown-item" href="@Url.Content("~/HTML/Person02.html")">Modiri Thobane</a></li>
-                            <li><a class="dropdown-item" href="@Url.Content("~/HTML/Person03.html")">Naqeeb Hussain Dawood</a></li>
-                            <li><a class="dropdown-item" href="@Url.Content("~/HTML/Person04.html")">Dian Erasmus</a></li>
-                            <li><a class="dropdown-item" href="@Url.Content("~/HTML/Person05.html")">Nicola James</a></li>
+                            @if (ViewBag.PeopleList != null && ViewBag.PeopleList.Count > 0)
+                            {
+                                foreach (var person in ViewBag.PeopleList)
+                                {
+                                    <li><a class="dropdown-item" href="@Url.Content(person.myLink)">@person.Name @person.Surname</a></li>
+                                }
+                            }
+                            else
+                            {
+                                <li><a class="dropdown-item disabled" href="#">No People Available</a></li>
+                            }
                         </ul>
                     </li>
                 </ul>
