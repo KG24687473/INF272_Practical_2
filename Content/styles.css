@@ -1,34 +1,136 @@
-﻿body {
+﻿/* General styling for the entire page */
+body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
 }
 
-h1, h2 {
-    color: #333;
+/* Heading styling */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-nav ul {
+/* Navigation menu styling */
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap; /* Items move to next line when screen resized */
     list-style-type: none;
+    margin: 0;
     padding: 0;
+    margin-bottom: 20px;
 }
 
-    nav ul li {
-        display: inline-block;
-        margin: 5px;
+    .nav-menu li {
+        margin: 0;
+        padding: 0;
+        display: inline-block; /* Ensures horizontal arrangement */
     }
 
-        nav ul li a {
-            text-decoration: none;
-            padding: 10px;
-            background-color: black;
-            color: white;
+        .nav-menu li:not(:last-child) a {
+            border-right: 1px solid #ccc; /* Right border for all menu items except the last one */
         }
 
-            nav ul li a:hover {
-                background-color: grey;
-            }
+    .nav-menu a {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        background-color: black;
+        color: white;
+    }
 
-.table {
-    border-collapse: collapse;
+        .nav-menu a:hover {
+            background-color: forestgreen; /* Change background color on hover */
+        }
+
+        .nav-menu a.active {
+            background-color: #4CAF50; /* Different background color for active link */
+        }
+
+/* Media query for responsive menu */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+    }
+
+        .nav-menu li {
+            width: 100%;
+        }
+
+            .nav-menu li:not(:last-child) a {
+                border-right: none;
+                border-bottom: 1px solid #ccc;
+            }
+}
+
+/* Section styling */
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    overflow: hidden; /* Clear floats */
+}
+
+/* Biography section styling */
+.biography img {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hobbies section styling */
+.hobbies img {
+    float: right;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+    /* Image flip effect on hover */
+    .biography img:hover, .hobbies img:hover {
+        transform: scaleX(-1); /* Flip image horizontally (mirror image) */
+    }
+
+/* Modules table styling */
+.modules table {
     width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.modules table, .modules th, .modules td {
+    border: 1px solid #ddd;
+}
+
+.modules th, .modules td {
+    padding: 8px;
+    text-align: left;
+}
+
+.modules th {
+    background-color: #f2f2f2;
+}
+
+/* Clear floats after sections */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .biography img, .hobbies img {
+        float: none;
+        display: block;
+        margin: 0 auto 15px;
+    }
 }
