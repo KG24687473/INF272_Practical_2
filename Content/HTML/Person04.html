@@ -4,41 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Person 01</title>
-    <link href="../styles.css" rel="stylesheet" />
+    <link href="../NewStyle.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Dian Erasmus</h1>
+    <h1>Person 4 - Dian Erasmus</h1>
 
-    <nav>
+    <nav class="nav-menu">
         <ul>
-            <li><a href="../People/Index.html">Home</a></li>
-            <li><a href="../People/Index.html">People List</a></li>
+            <li><a href="/People/Index">MAIN</a></li>
+            <li><a href="/People/Index">LIST</a></li>
             <li><a href="Person01.html">Keshiv</a></li>
             <li><a href="Person02.html">Modiri</a></li>
             <li><a href="Person03.html">Naqeeb</a></li>
+            <li><a href="Person04.html" class="active">Dian</a></li>
             <li><a href="Person05.html">Nicola</a></li>
             <li><a href="javascript:history.back()">Back</a></li>
         </ul>
     </nav>
 
-    <section>
-        <h2>Background</h2>
-        <p>A brief biography of Person 01.</p>
-        <img src="Images/person01.jpg" alt="Person 01">
-    </section>
+    <!-- Biography Section -->
+    <div class="section biography">
+        <img src="~/Content/HTML/Images/peter-parker-Cropped.webp" alt="Person's Photo">
+        <h2>Background & Biography</h2>
+        <p>
+            My passion for technology began in high school, where I taught myself programming languages and built web applications. I went on to study Software Engineering, focusing on full-stack development and cloud computing. During my internships, I worked at a startup on scalable cloud applications, learning the importance of teamwork and clean code. Now that I’ve graduated, I’m eager to start my career as a software engineer, focusing on building cloud-based solutions that drive innovation.
+        </p>
+        <div class="clearfix"></div>
+    </div>
 
-    <section>
-        <h2>Hobbies</h2>
-        <p>Details about hobbies.</p>
-    </section>
+    <!-- Hobbies Section -->
+    <div class="section hobbies">
+        <img src="~/Content/HTML/Images/The-Incredible-Hulk.webp" alt="Hobby Photo">
+        <h2>Hobbies & Interests</h2>
+        <p>
+            I’m an avid runner and participate in local marathons, which helps me stay focused and disciplined. I also enjoy playing video games, especially those that require strategic thinking and teamwork, like multiplayer online games. Reading is another passion of mine, particularly books on philosophy and technology. I find that philosophy helps me think critically, while books about software development keep me sharp in my technical skills. Additionally, I love tinkering with electronics and building small projects in my spare time.
 
-    <section>
+
+        </p>
+        <div class="clearfix"></div>
+    </div>
+
+    <!-- Modules Section -->
+    <div class="section modules">
         <h2>Modules</h2>
         <table>
-            <tr><th>Semester</th><th>Modules</th></tr>
-            <tr><td>1st</td><td>Module A, Module B</td></tr>
-            <tr><td>2nd</td><td>Module C, Module D</td></tr>
+            <tr>
+                <th>First Semester</th>
+                <th>Second Semester</th>
+            </tr>
+            <tr>
+                <td>INF272</td>
+                <td>INF271</td>
+            </tr>
+            <tr>
+                <td>STK210</td>
+                <td>WST212</td>
+            </tr>
+            <tr>
+                <td>INF214</td>
+                <td>FIL251</td>
+            </tr>
+       
         </table>
-    </section>
+    </div>
 </body>
 </html>
