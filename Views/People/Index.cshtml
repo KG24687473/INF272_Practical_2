@@ -1,60 +1,54 @@
-﻿@* Interface Enumarable = Enumarate or list (to ascertain the number of : count) *@
-
-@model IEnumerable<u24687473_INF272_Practical_2.Models.Person>
+﻿@model IEnumerable<u24687473_INF272_Practical_2.Models.Person>
 
 @{
     ViewBag.Title = "People List";
 }
 
-<h2>GroupMembers</h2>
+<h2 class="mb-4 text-primary">Group Members</h2>
 
-@*<p>
-        @Html.ActionLink("Create New", "Create") >> In this overload it is the name and the action >> Link going nowhere.
-    </p>*@
-<table class="table">
+<table class="table table-bordered table-striped table-hover">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.StudentNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Surname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.myLink)
-        </th>
+        <th>@Html.DisplayNameFor(model => model.StudentNumber)</th>
+        <th>@Html.DisplayNameFor(model => model.Name)</th>
+        <th>@Html.DisplayNameFor(model => model.Surname)</th>
+        <th>@Html.DisplayNameFor(model => model.Email)</th>
+        <th>@Html.DisplayNameFor(model => model.myLink)</th>
+        <th>Delete Profile</th>
     </tr>
 
-    @foreach (var item in Model) //For each person
+    @foreach (var item in Model)
     {
         <tr>
+            <td>@Html.DisplayFor(modelItem => item.StudentNumber)</td>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.Surname)</td>
+            <td>@Html.DisplayFor(modelItem => item.Email)</td>
             <td>
-                @Html.DisplayFor(modelItem => item.StudentNumber)
+                <a href="@item.myLink" class="btn btn-primary btn-sm" target="_blank">Link</a>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                <button class="btn btn-primary btn-sm" onclick="removeRow(this)">Delete</button>
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Surname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                <a href="@item.myLink" class="btn btn-primary" target="_blank">Link</a>
-            </td>
-            @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>*@
         </tr>
     }
-
 </table>
 
+<script>
+    // Function to remove a row when the Remove button is clicked
+    function removeRow(button) {
+        var row = button.closest("tr");
+        row.remove();
+    }
+
+    // Highlight rows where first name starts with "K"
+    window.onload = function () {
+        const rows = document.querySelectorAll("table tr");
+
+        for (let i = 1; i < rows.length; i++) {
+            const firstName = rows[i].cells[1].textContent.trim();
+            if (firstName.startsWith("K")) {
+                rows[i].style.color = "red";
+            }
+        }
+    };
+</script>

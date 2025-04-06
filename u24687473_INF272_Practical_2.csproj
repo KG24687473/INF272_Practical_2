@@ -145,6 +145,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\custom.css" />
     <Content Include="Content\HTML\Person01.html" />
     <Content Include="Content\HTML\Person02.html" />
     <Content Include="Content\HTML\Person03.html" />

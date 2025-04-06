@@ -1,0 +1,14 @@
+﻿.card-header h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card img {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card {
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+}

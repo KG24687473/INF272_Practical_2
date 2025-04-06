@@ -1,69 +1,103 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Person 01</title>
-    <link href="../NewStyle.css" rel="stylesheet" />
-</head>
-<body>
-    <h1>Person 2 - Modiri Thobane</h1>
+    <meta charset="utf-8" />
 
-    <nav class="nav-menu">
-        <ul>
-            <li><a href="/People/Index">MAIN</a></li>
-            <li><a href="/People/Index">LIST</a></li>
-            <li><a href="Person01.html">Keshiv</a></li>
-            <li><a href="Person02.html" class="active">Modiri</a></li>
-            <li><a href="Person03.html">Naqeeb</a></li>
-            <li><a href="Person04.html">Dian</a></li>
-            <li><a href="Person05.html">Nicola</a></li>
-            <li><a href="javascript:history.back()">Back</a></li>
-        </ul>
-    </nav>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <!-- Biography Section -->
-    <div class="section biography">
-        <img src="~/Content/HTML/Images/black-widow-1.jpeg" alt="Person's Photo">
-        <h2>Background & Biography</h2>
-        <p>
-            Coming from a family immersed in IT, I developed an interest in coding early on, creating simple games by the time I was 16. I chose to study Computer Science, specializing in mobile app development and game design. During university, I joined a startup incubator where I worked on mobile applications, and I participated in multiple coding competitions. I’m passionate about game development and plan to launch my own mobile game studio after gaining more industry experience.
-        </p>
-        <div class="clearfix"></div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        td, th {
+            text-align: center;
+        }
+
+        body {
+            background-color: darkseagreen;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .navbar {
+            background-color: lightcyan;
+        }
+
+        .content {
+            display: none;
+        }
+
+            .content.active {
+                display: block;
+            }
+    </style>
+    </head>
+    <div class="container">
+        <h1>Person 2 - Modiri</h1>
+        <hr />
+
+        <!-- Navigation bar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Home/Index">MAIN</a></li>
+                    <li><a href="Person01.html">Keshiv</a></li>
+                    <li><a href="Person02.html">Modiri</a></li>
+                    <li><a href="Person03.html">Naqeeb</a></li>
+                    <li><a href="Person04.html">Dian</a></li>
+                    <li><a href="Person05.html">Nicola</a></li>
+                    <li><a href="javascript:history.back()">BACK</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Background and Biography</div>
+            <div class="panel-body about">
+                <p>
+                    <img src="../HTML/Images/thor-lightning.jpeg" style="float:left; width:100px; height:150px;object-fit: cover; padding: 5px" />
+                    From a young age, I was fascinated by how computers work, often helping my father, an IT professional, troubleshoot gadgets at home. In high school, I joined the computer science club and built my first website at 15, which led me to pursue a degree in Information Technology with a focus on web development and UX/UI design. I’ve interned with design agencies to create user-friendly websites, and I’m now looking forward to a career as a UX/UI designer, crafting intuitive, accessible digital experiences.
+                </p>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Hobbies</div>
+            <div class="panel-body">
+                <p>
+                    <img src="../HTML/Images/Wanda-Scarlet-Witch-Cropped.jpeg" style="float:right; width:100px; height:150px;object-fit: cover; padding: 5px" />
+                    Outside of my studies, I have a love for painting and digital art, which allows me to express my creativity in ways that complement my tech skills. I also enjoy hiking and exploring new places, as it helps me recharge and get new ideas for my design work. In terms of reading, I’m a huge fan of graphic novels, fantasy books, and anything related to design and user experience. I also like to participate in local tech meetups and hackathons, where I can connect with others who share my interests in tech and innovation.
+                </p>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Modules</div>
+            <div class="panel-body">
+                <table class="table table-bordered">
+                        <tr>
+                            <th>First Semester</th>
+                            <th>Second Semester</th>
+                        </tr>
+                        <tr>
+                            <td>INF272</td>
+                            <td>INF271</td>
+                        </tr>
+                        <tr>
+                            <td>STK210</td>
+                            <td>WST212</td>
+                        </tr>
+                        <tr>
+                            <td>INF214</td>
+                            <td>FIL251</td>
+                        </tr>
+                </table>
+            </div>
+        </div>
     </div>
-
-    <!-- Hobbies Section -->
-    <div class="section hobbies">
-        <img src="~/Content/HTML/Images/antman-and-the-wasp-marvel-4.jpeg" alt="Hobby Photo">
-        <h2>Hobbies & Interests</h2>
-        <p>
-            Outside of tech, I’m passionate about photography. I love capturing moments, whether it’s urban landscapes, nature, or candid portraits. I also enjoy playing soccer with my friends, as it’s a great way to stay active and socialize. On quiet evenings, I’m often found reading graphic novels or technical books related to game development and programming. I’m always looking for new techniques and creative inspiration for my own game design projects.
-        </p>
-        <div class="clearfix"></div>
-    </div>
-
-    <!-- Modules Section -->
-    <div class="section modules">
-        <h2>Modules</h2>
-        <table>
-            <tr>
-                <th>First Semester</th>
-                <th>Second Semester</th>
-            </tr>
-            <tr>
-                <td>INF272</td>
-                <td>INF271</td>
-            </tr>
-            <tr>
-                <td>STK210</td>
-                <td>WST212</td>
-            </tr>
-            <tr>
-                <td>INF214</td>
-                <td>FIL251</td>
-            </tr>
-
-        </table>
-    </div>
-</body>
 </html>
