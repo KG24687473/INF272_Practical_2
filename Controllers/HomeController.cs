@@ -26,5 +26,31 @@ namespace u24687473_INF272_Practical_2.Controllers
 
             return View();
         }
+
+        public ActionResult Person1()
+        {
+           
+            return Redirect("~/Content/HTML/Person01.html");
+        }
+
+        public ActionResult Person2()
+        {
+            return Redirect("~/HTML/Person2.html");
+        }
+
+        public ActionResult Person3()
+        {
+            return Redirect("~/HTML/Person3.html");
+        }
+
+        public ActionResult Person4()
+        {
+            return Redirect("~/HTML/Person4.html");
+        }
+
+        public ActionResult Person5()
+        {
+            return Redirect("~/HTML/Person5.html");
+        }
     }
 }
