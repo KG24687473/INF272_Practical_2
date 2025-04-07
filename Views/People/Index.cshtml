@@ -34,13 +34,12 @@
 </table>
 
 <script>
-    // Function to remove a row when the Remove button is clicked
+
     function removeRow(button) {
         var row = button.closest("tr");
         row.remove();
     }
 
-    // Highlight rows where first name starts with "K"
     window.onload = function () {
         const rows = document.querySelectorAll("table tr");
 

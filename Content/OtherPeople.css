@@ -1,0 +1,102 @@
+﻿/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.section {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Nav Menu Styling */
+.nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .nav-menu ul li {
+        border-right: 1px solid white;
+    }
+
+        .nav-menu ul li:last-child {
+            border-right: none;
+        }
+
+        .nav-menu ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            background-color: black;
+            transition: background-color 0.3s ease;
+        }
+
+            .nav-menu ul li a:hover:not(.active) {
+                background-color: grey;
+            }
+
+            .nav-menu ul li a.active {
+                background-color: #4CAF50;
+            }
+
+/* Image Styling */
+img {
+    width: 180px;
+    height: auto;
+    object-fit: cover;
+    margin: 10px;
+    transition: transform 0.5s ease;
+    float: left;
+}
+
+.hobbies img {
+    float: right;
+}
+
+img:hover {
+    transform: scaleX(-1);
+}
+
+/* Clearfix for Float */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+    background-color: #fdfdfd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
