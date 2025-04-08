@@ -201,6 +201,7 @@
     <Content Include="Views\People\Index.cshtml" />
     <Content Include="Views\Shared\_PeopleDropdown.cshtml" />
     <Content Include="Views\People\Home.cshtml" />
+    <Content Include="Views\People\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

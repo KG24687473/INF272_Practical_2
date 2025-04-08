@@ -4,50 +4,154 @@
     ViewBag.Title = "People List";
 }
 
-<h2 class="mb-4 text-primary">Group Members</h2>
+<h2>List of People</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    Search a string: <input type="text" id="search" size="20" name="search">
+    <button onclick="ST()">Submit</button>
+</p>
 
-<table class="table table-bordered table-striped table-hover">
-    <tr>
-        <th>@Html.DisplayNameFor(model => model.StudentNumber)</th>
-        <th>@Html.DisplayNameFor(model => model.Name)</th>
-        <th>@Html.DisplayNameFor(model => model.Surname)</th>
-        <th>@Html.DisplayNameFor(model => model.Email)</th>
-        <th>@Html.DisplayNameFor(model => model.myLink)</th>
-        <th>Delete Profile</th>
+<table class="table table-bordered">
+
+    <tr style="background-color: darkgreen; color: white; ">
+        <th width="16%">
+            @Html.DisplayNameFor(model => model.StudentNumber)
+        </th>
+        <th width="16%">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th width="16%">
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th class="text-center" width="16%">
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+
+        <th class="text-center" width="16%">
+            Delete
+        </th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.StudentNumber)</td>
-            <td>@Html.DisplayFor(modelItem => item.Name)</td>
-            <td>@Html.DisplayFor(modelItem => item.Surname)</td>
-            <td>@Html.DisplayFor(modelItem => item.Email)</td>
-            <td>
-                <a href="@item.myLink" class="btn btn-primary btn-sm" target="_blank">Link</a>
-            </td>
-            <td>
-                <button class="btn btn-primary btn-sm" onclick="removeRow(this)">Delete</button>
-            </td>
-        </tr>
-    }
+    <tbody id="info">
+        @foreach (var item in Model) //For each person
+        {
+            <tr class="rowcontent">
+                <td width="16%">
+                    @Html.DisplayFor(modelItem => item.StudentNumber)
+                </td>
+                <td width="16%">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td width="16%">
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td class="text-center" width="16%">
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td class="text-center" width="16%">
+                    <button type="button" class="btn btn-success btn-sm" onclick="delete_row(this)">Delete</button>
+                </td>
+            </tr>
+
+        }
+    </tbody>
 </table>
 
-<script>
 
-    function removeRow(button) {
-        var row = button.closest("tr");
-        row.remove();
-    }
+<p>
+    <button onclick="Save()">Save to local storage</button>
+    <button onclick="Retrieve()">Retrieve from local storage</button>
+    <button onclick="Clear()">Clear local storage</button>
+</p>
 
-    window.onload = function () {
-        const rows = document.querySelectorAll("table tr");
+@section scripts {
+    <script type="text/javascript">
 
-        for (let i = 1; i < rows.length; i++) {
-            const firstName = rows[i].cells[1].textContent.trim();
-            if (firstName.startsWith("K")) {
-                rows[i].style.color = "red";
+
+        var tableBody = document.getElementById("info");
+        function Save() {
+
+            var tableBody = document.getElementById("info");
+            console.log(tableBody);
+            const tableData = JSON.stringify(tableBody.innerHTML);
+            localStorage.setItem("tableData", tableData);
+
+          /* No JSON
+
+            var tableData = "";
+
+            for (var i = 0, row; row = tableBody.rows[i]; i++) {
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    tableData += col.innerHTML + "|";
+
+                }
+                tableData += ",";
+
+             } */
+
+        }
+
+     
+        function Clear() {
+            localStorage.clear();
+        }
+
+       
+        function Retrieve() {
+            var tableData = localStorage.getItem("tableData");
+            tableBody.innerHTML = " ";
+
+            const tableHTML = JSON.parse(tableData);
+            tableBody.innerHTML = tableHTML
+
+          /* No JSON
+
+            var rows = tableData.split(",");
+            console.log(rows);
+
+            console.log(rows);
+
+            for (var i = 0; i < rows.length-1; i++) {
+                var cells = rows[i].split("|");
+                var row = document.createElement("tr");
+
+               for (var j = 0; j < cells.length-1; j++) {
+                   var cell = document.createElement("td");
+                    cell.innerHTML = cells[j];
+                   row.appendChild(cell); }
+
+                tableBody.appendChild(row);
+            } */
+
+        }
+
+        var d = document.getElementById("info");
+        const x = d.children;
+        console.log(x);
+
+        function ST() {
+            var s = document.getElementById("search").value;
+            const pattern = new RegExp(s);
+            console.log(pattern);
+
+            for (let i = 0; i < x.length; i++) {
+
+                if (pattern.test(x[i].cells[1].innerText)) {
+                    x[i].style.color = "red";
+                    setTimeout(function () {
+                        x[i].style.color = "black";
+                    }, 3000); //3000 = 3 seconds
+                }
+
             }
         }
-    };
-</script>
+
+        function delete_row(e) {
+            e.parentElement.parentElement.remove();
+        }
+
+
+    </script>
+}

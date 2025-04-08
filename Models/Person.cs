@@ -24,9 +24,5 @@ namespace u24687473_INF272_Practical_2.Models
         [Required, EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-
-        [Required]
-        [Display(Name = "Profile Link")]
-        public string myLink { get; set; }
     }
 }
